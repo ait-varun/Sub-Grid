@@ -1,0 +1,42 @@
+.content-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Responsive columns
+    gap: 1rem; // Spacing between grid items
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+
+    .content-box {
+        display: grid;
+        grid-row: span 3; // Each box spans 3 rows in the parent grid
+        grid-template-rows: subgrid; // Inherit rows from parent grid
+        gap: 0.5rem; // Spacing between child elements
+        padding: 1rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin: 0;
+            align-self: stretch; // Ensure the paragraph takes up equal space
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #0056b3;
+            }
+        }
+    }
+}
