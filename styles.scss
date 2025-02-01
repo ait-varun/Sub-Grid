@@ -1,41 +1,59 @@
 .content-boxes {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Responsive columns
-    gap: 1rem; // Spacing between grid items
-    padding: 20px;
-    background-color: #f1f1f1;
-    border-radius: 10px;
+    gap: 2rem; // Increased spacing between grid items for a more spacious layout
+    padding: 2rem;
+    background-color: #f9f9f9; // Lighter background for a clean feel
+    border-radius: 12px; // Slightly larger border radius for smooth corners
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); // Soft shadow for depth
 
     .content-box {
         display: grid;
         grid-row: span 3; // Each box spans 3 rows in the parent grid
         grid-template-rows: subgrid; // Inherit rows from parent grid
-        gap: 0.5rem; // Spacing between child elements
-        padding: 1rem;
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        gap: 1rem; // Slightly more space between child elements
+        padding: 1.5rem;
+        background-color: #ffffff; // Clean white background
+        border-radius: 12px; // Rounded corners for a modern look
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); // Soft shadow for depth
+        transition: transform 0.3s ease, box-shadow 0.3s ease; // Smooth hover transition
+
+        // Hover effect to elevate the content box
+        &:hover {
+            transform: translateY(-8px); // Lift the box up slightly
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); // More prominent shadow on hover
+        }
 
         h2 {
             margin: 0;
-            font-size: 1.5rem;
+            font-size: clamp(1.25rem, 5vw, 2rem); // Responsive font size using clamp
+            font-weight: 600;
+            color: #333; // Darker, modern font color
         }
 
         p {
             margin: 0;
+            font-size: clamp(1rem, 4vw, 1.25rem); // Responsive font size using clamp
+            color: #555; // Softer text color for better contrast
+            line-height: 1.6; // Improve line spacing for readability
             align-self: stretch; // Ensure the paragraph takes up equal space
         }
 
         button {
-            padding: 0.5rem 1rem;
-            background-color: #007bff;
+            padding: 0.75rem 1.25rem;
+            background: linear-gradient(135deg, #007bff, #00c6ff); // Gradient background for the button
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px; // Slightly more rounded edges
             cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.3s ease; // Smooth transition
 
+            // Hover effect for button
             &:hover {
-                background-color: #0056b3;
+                background: linear-gradient(135deg, #0056b3, #0099cc); // Darker gradient on hover
+                transform: scale(1.05); // Slightly enlarge button on hover
             }
         }
     }

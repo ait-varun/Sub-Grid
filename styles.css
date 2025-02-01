@@ -1,37 +1,52 @@
 .content-boxes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-  padding: 20px;
-  background-color: #f1f1f1;
-  border-radius: 10px;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 .content-boxes .content-box {
   display: grid;
   grid-row: span 3;
   grid-template-rows: subgrid;
-  gap: 0.5rem;
-  padding: 1rem;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.content-boxes .content-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 .content-boxes .content-box h2 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 5vw, 2rem);
+  font-weight: 600;
+  color: #333;
 }
 .content-boxes .content-box p {
   margin: 0;
+  font-size: clamp(1rem, 4vw, 1.25rem);
+  color: #555;
+  line-height: 1.6;
   align-self: stretch;
 }
 .content-boxes .content-box button {
-  padding: 0.5rem 1rem;
-  background-color: #007bff;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .content-boxes .content-box button:hover {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, #0056b3, #0099cc);
+  transform: scale(1.05);
 }/*# sourceMappingURL=styles.css.map */
